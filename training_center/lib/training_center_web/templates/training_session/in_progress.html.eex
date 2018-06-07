@@ -1,0 +1,10 @@
+<div>
+  <%= for entry <- @status do %>
+    <%= if entry.complete == "true" do %>
+      <div class="exercise-complete" data-name="<%=entry.name%>"><%= entry.name %></div>
+    <% else %>
+      <div class="exercise" data-name="<%=entry.name%>"><%= entry.name %></div>
+    <% end %>
+  <% end %>
+</div>
+<div>

@@ -1,0 +1,14 @@
+<%= render TrainingCenterWeb.LayoutView, "header.html", conn: @conn %>
+
+<div class="container-with-header">
+  <div class="header-content">
+    <div>
+      <%= link "Leave Training", 
+               to: home_path(@conn, :index),
+               class: "header-button" %>
+    </div>    
+  </div>
+  <div class="content">
+    <div id='trainingSessionContainer' data-name='<%= @name %>' data-role='participant'></div>
+  </div>
+</div>

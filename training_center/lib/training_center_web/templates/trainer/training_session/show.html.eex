@@ -1,0 +1,16 @@
+<%= render TrainingCenterWeb.LayoutView, "header.html", conn: @conn %>
+
+<div class="container-with-header">
+  <div class="header-content">
+    <div>
+      <%= link "End Training Session",
+               to: trainer_training_session_path(@conn, :stop_training_session, 1), 
+               method: :post,
+               class: "header-button" %>
+    </div>
+  </div>    
+  <div class="content animated fadeIn">
+    <div id='trainingSessionContainer' data-name='<%= @name %>' data-role='trainer'></div>
+  </div>
+</div>
+

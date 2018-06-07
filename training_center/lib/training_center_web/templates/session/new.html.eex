@@ -1,0 +1,15 @@
+<div id="loginContainer" class="animated fadeIn">
+<%= form_for @conn, session_path(@conn, :create), [as: :user], fn f -> %> 
+  <div>
+    <%= text_input f, :name,
+                      class: "login-input",
+                      placeholder: "Names Goes Here",
+                      autocomplete: "off",
+                      required: true %>
+  </div>
+
+  <div>
+    <%= submit "Let's Go!", class: "login-submit" %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,18 @@
+<div>
+  <table>
+    <tr>
+      <th></th>
+      <%= for {_, exercise} <- @status.workout_template do %>
+        <th><%= exercise %></th>
+      <% end %>
+    </tr>
+    <%= for name <- @status.participants do %>
+      <tr>
+        <td class='<%= online_status(@presence, name) %> text-right font-18'><%= name %></td>
+        <%= for {_, exercise} <- @status.workout_template do %>
+          <td class='<%= get_exercise_status_class(@status.participant_workouts[name], exercise) %>'></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

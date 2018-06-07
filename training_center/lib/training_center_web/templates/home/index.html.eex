@@ -1,0 +1,18 @@
+<%= render TrainingCenterWeb.LayoutView, "header.html", conn: @conn %>
+
+<div class="container-with-header">
+  <div class="header-content">
+    <div>
+      <%= link "Logout #{@name}",
+               to: session_path(@conn, :delete), 
+               method: :delete,
+               class: "header-button" %>
+    </div>
+  </div>    
+  <div class="content animated fadeIn">
+    <div class="training-session-card">
+      <%= link "Join Training Session", 
+               to: training_session_path(@conn, :show, 1) %>
+    </div>
+  </div>
+</div>
